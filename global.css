@@ -1,0 +1,203 @@
+#map {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+}
+
+#app {
+    position: absolute;
+    background-color: bisque;
+	top: 20px;
+    right: 20px;
+	z-index: 5555;
+}
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.leaflet-marker-icon.svgFlag span {
+	padding-left: 4px;
+	margin-left: 12px;
+    margin-top: 11px;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    width: 14px;
+}
+.leaflet-marker-icon.svgFlag {
+	background-image: url(./img/svgFlag.svg);
+}
+
+/*-- Tconture.svelte */
+.tconture {
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	padding: 13px 26px 5px 15px;
+	width: 288px;
+}
+
+.tconture .startPoint.warn input,
+.tconture  input.warn {
+	background-color: coral
+}
+
+.tconture div {
+    margin-bottom: 22px;
+}
+.tconture .nep {
+    /* margin-bottom: 22px; */
+}
+.tconture .nep .title {
+    font-weight: bold;
+}
+
+.tconture .nep .title .sub {
+	font-weight: normal;
+	font-size: small;
+}
+
+.tconture .startPoint .string {
+	width: 98%;
+    font-size: smaller;
+    padding-top: 5px;
+}
+.tconture .startPoint * {
+    width: 48%;
+    text-align: center;
+    height: 30px;
+    border: 1px solid #D8E1E8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding-left: 5px;
+    font-weight: bold;
+}
+.tconture div.ugol,
+.tconture .line {
+    color: #8A9BA8;
+    font-weight: 600;
+    font-size: 12px;
+}
+.tconture .line .grd label {
+	bottom: 3px;
+    position: relative;
+}
+.tconture .line .grd {
+	position: absolute;
+    left: 196px;
+    display: inline-block;
+}
+/*-- Tbody.svelte */
+.tbody.notActive {
+    pointer-events: none;
+    opacity: 0.6;
+}
+/*-- Tr.svelte */
+.tconture div.ugol .title,
+.tconture div.tr {
+    margin-bottom: unset;
+}
+.tr {
+    font-size: 12px;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+.tr span.nm {
+    min-width: 30px;
+    display: inline-block;
+    text-align: center;
+}
+.tr buttons {
+    margin-left: 6px;
+}
+.tr button {
+	width: 16px;
+    height: 15px;
+    border: none;
+    padding: 0px;
+    cursor: pointer;
+}
+.tr.last button.addLine,
+.tr.last button.delLine {
+    cursor: default;
+	opacity: 0.6;
+}
+.tr button.delLine {
+	background-image: url(./img/remove_thin_ic.svg);
+}
+.tr button.addLine {
+	background-image: url(./img/add_thin_ic.svg);
+}
+.tr button.addHole {
+	background-image: url(./img/addHole.svg);
+}
+
+.tr input {
+    color: #394B59;
+    width: 78px;
+    height: 30px;
+    border: 1px solid #D8E1E8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding-left: 5px;
+    font-weight: bold;
+}
+/*
+body {
+	color: #333;
+	margin: 0;
+	padding: 8px;
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+a {
+	color: rgb(0,100,200);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: rgb(0,80,160);
+}
+
+label {
+	display: block;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	-webkit-padding: 0.4em 0;
+	padding: 0.4em;
+	margin: 0 0 0.5em 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+input:disabled {
+	color: #ccc;
+}
+
+button {
+	color: #333;
+	background-color: #f4f4f4;
+	outline: none;
+}
+
+button:disabled {
+	color: #999;
+}
+
+button:not(:disabled):active {
+	background-color: #ddd;
+}
+
+button:focus {
+	border-color: #666;
+}
+*/
