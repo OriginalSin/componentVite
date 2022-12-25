@@ -27,22 +27,6 @@
 	let flagZakl;
 	let listArr = [];
 	let listLen = 0;
-	// let i = 0;
-	// let snapLength = 1;
-	// let holesFlag = true;
-	
-	// const DEFANGLE = 45,
-		// DEFLEG = 200,
-		// PATERNS = {
-			// ring: /ring(\d+)/,
-			// hole: /hole(\d+)/,
-			// lat: /(\d+)_lat/,
-			// lng: /(\d+)_lng/,
-			// angle: /(\d*)\.?\d*_a/,
-			// dist: /(\d+)_d/
-			// ,
-			// latlng: '\d*([\.]&#123;1&#125;\d*)?'
-		// };
 	let needFocuse;
 	_setFocuse.subscribe(value => needFocuse = value);
 
@@ -107,8 +91,7 @@
 		}
 		// sf = getContext('setFocuse');
 	});
-		// const tt = getAllContexts();
-		// const answer = getContext('answer');
+
 	let contDiv;
 	afterUpdate(() => {
 		let inputs = contDiv.getElementsByTagName('input');
@@ -126,7 +109,7 @@
 		<Tr {item} {nm} {start} {end} {flag} {nep} {listLen} {type} on:notify={notify} />
 	{/each}
 	{#if flagZakl}
-		<Tr bind:item={zakl} bind:nm={snapLen} {start} {end} {flag} {nep} {listLen} {type} {last} on:notify={notify} />
+		<Tr bind:item={zakl} bind:nm={listLen} {start} {end} {flag} {nep} {listLen} {type} {last} on:notify={notify} />
 	{/if}
 
 </div>

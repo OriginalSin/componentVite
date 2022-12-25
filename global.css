@@ -7,7 +7,7 @@
 
 #app {
     position: absolute;
-    background-color: bisque;
+    background-color: white;
 	top: 20px;
     right: 20px;
 	z-index: 5555;
@@ -16,6 +16,7 @@ html, body {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	margin: 0;
 }
 .leaflet-marker-icon.svgFlag span {
 	padding-left: 4px;
@@ -31,39 +32,192 @@ html, body {
 	background-image: url(./img/svgFlag.svg);
 }
 
+::-webkit-scrollbar {
+  width: 4px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+}
+
 /*-- Tconture.svelte */
 .tconture {
 	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-	padding: 13px 26px 5px 15px;
+	/* padding: 13px 26px 5px 15px; */
 	width: 288px;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
+.tconture .header {
+	font-size: 14px;
+}
+.tconture .scrollbar {
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.tconture .bottom {
+	display: flex;
+    min-height: 40px;
+    border-top: 1px solid #D8E1E8;
+}
+.tconture .bottom div.save {
+	color: #318CFE;
+}
+.tconture .bottom div {
+    display: flex;
+    font-size: 14px;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #D8E1E8;
+    cursor: pointer;
+    font-family: IBM Plex Sans;
+    font-weight: 600;
+}
+.tconture .line {
+	padding: 10px 16px;
+    color: #8A9BA8;
+    font-weight: 600;
+    font-size: 12px;
+}
+.tconture .line select {
+	width: 224px;
+    border: 1px solid #D8E1E8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 30px;
+    font-family: IBM Plex Sans;
+    color: #636c72;
+}
+.tconture .line .pop_upload {
+	background-image: url(/img/upload.svg);
+    cursor: pointer;
+    left: 10px;
+    position: relative;
+    width: 14px;
+    height: 16px;
+    display: inline-block;
+}
+.tconture .line .info .cont {
+	display: none;
+    position: absolute;
+    border: 1px solid #D8E1E8;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 4px;
+    width: 218px;
+    height: 118px;
+    padding: 15px;
+    right: 0px;
+    background-color: white;
+	color: black;
+}
+.tconture .line .info:hover .cont{
+    display: block;
+    color: black;
+}
+.tconture .line .info {
+	position: relative;
+    right: -96px;
+    text-decoration-line: underline;
+    cursor: pointer;
+    color: #318CFE;
+	font-size: 12px;
 
-.tconture .startPoint.warn input,
-.tconture  input.warn {
-	background-color: coral
 }
-
-.tconture div {
-    margin-bottom: 22px;
+.tconture .line .title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: normal;
+    color: #394B59;
+    display: block;
 }
-.tconture .nep {
-    /* margin-bottom: 22px; */
-}
-.tconture .nep .title {
+.tconture input {
+    text-align: center;
     font-weight: bold;
 }
 
-.tconture .nep .title .sub {
+.tconture input[type="number"],
+.tconture .line input[type="text"] {
+    width: 48%;
+    height: 30px;
+    border: 1px solid #D8E1E8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.tconture .line input[type="checkbox"] {
+}
+
+.tconture .line input.kvartal {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #D8E1E8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding-left: 5px;
+    text-align: left;
+    color: #636c72;
+}
+
+.tconture .line .draw {
+	background-image: url(./img/draw.svg);
+	background-repeat: no-repeat;
+	padding-left: 22px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: normal;
+	color: #318CFE;
+	cursor: pointer;
+}
+.tconture .line .draw.active {
+	color: #f57c00;
+}
+/*-- Tbodycont.svelte */
+.tbodycont {
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	padding: 13px 10px 5px 15px;
+	/* width: 288px; */
+}
+
+.tbodycont .startPoint.warn input,
+.tbodycont  input.warn {
+	background-color: coral
+}
+
+.tbodycont div {
+    /* margin-bottom: 22px; */
+}
+.tbodycont .nep {
+    /* margin-bottom: 22px; */
+}
+.tbodycont .nep .title {
+    font-weight: bold;
+}
+
+.tbodycont .nep .title .sub {
 	font-weight: normal;
 	font-size: small;
 }
 
-.tconture .startPoint .string {
+.tbodycont .startPoint .string {
 	width: 98%;
     font-size: smaller;
     padding-top: 5px;
 }
-.tconture .startPoint * {
+.tbodycont .startPoint * {
     width: 48%;
     text-align: center;
     height: 30px;
@@ -73,19 +227,20 @@ html, body {
     padding-left: 5px;
     font-weight: bold;
 }
-.tconture div.ugol,
-.tconture .line {
+.tbodycont div.ugol,
+.tbodycont .line {
     color: #8A9BA8;
     font-weight: 600;
     font-size: 12px;
 }
-.tconture .line .grd label {
+.tbodycont .line .grd label {
 	bottom: 3px;
     position: relative;
 }
-.tconture .line .grd {
-	position: absolute;
-    left: 196px;
+.tbodycont .line .grd {
+    position: relative;
+    left: 154px;
+    top: -16px;
     display: inline-block;
 }
 /*-- Tbody.svelte */
@@ -94,8 +249,8 @@ html, body {
     opacity: 0.6;
 }
 /*-- Tr.svelte */
-.tconture div.ugol .title,
-.tconture div.tr {
+.tbodycont div.ugol .title,
+.tbodycont div.tr {
     margin-bottom: unset;
 }
 .tr {
@@ -110,6 +265,19 @@ html, body {
 .tr buttons {
     margin-left: 6px;
 }
+
+.line .hole .setHole {
+    margin-right: 12px;
+	min-width: 60px;
+    display: inline-block;
+	cursor: pointer;
+}
+
+.line .hole button.delLine {
+    position: relative;
+    top: 2px;
+}
+.line .hole button.delLine,
 .tr button {
 	width: 16px;
     height: 15px;
@@ -122,6 +290,7 @@ html, body {
     cursor: default;
 	opacity: 0.6;
 }
+.line .hole button.delLine,
 .tr button.delLine {
 	background-image: url(./img/remove_thin_ic.svg);
 }

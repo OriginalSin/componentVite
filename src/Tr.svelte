@@ -43,9 +43,12 @@
 	const _getAttr = (node) => {
 		const prnt = node.parentNode.parentNode;
 		const ind = node.parentNode.getAttribute('data-index') || prnt.getAttribute('data-index');
+		let vnm = ind ? Number(ind) : undefined;
+		if (last) vnm -= 1;
 		return {
 			cmd: node.name,
-			nm: ind ? Number(ind) : undefined,
+			nm: vnm,
+			last,
 			node
 		};
 	}
@@ -70,8 +73,8 @@
 	<span class=''>-</span>
 	<input type='text' disabled={last} value={item[1]} name='distance' placeholder={flag ? 'lng' : 'distance'} class='distance' on:keyup={onKeyUp} on:change={_sendCmd} on:paste={clipboard} />
 	<span class="buttons">
-		{#if !nep && type === 'ring' && listLen > 1}<button name='addHole' class='addHole' on:click|stopPropagation={_sendCmd}></button>{/if}
-		<button name='addLine' class='addLine' on:click|stopPropagation={_sendCmd}></button>
+		{#if !nep && type === 'ring' && listLen > 1}<button name='addHole' class='addHole' on:click|preventDefault|stopPropagation={_sendCmd}></button>{/if}
+		<button name='addLine' class='addLine' on:click|preventDefault|stopPropagation={_sendCmd}></button>
 		<button name='delLine' class='delLine' on:click|stopPropagation={_sendCmd}></button>
 	</span>
 </div>
